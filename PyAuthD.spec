@@ -1,14 +1,17 @@
 %define	snap	20070218
-Summary:	Python module for accessing Extended Attributes of the files
-Summary(pl.UTF-8):	Moduł języka Python pozwalający na dostęp do rozszerzonych atrybutów plików
+Summary:	PyAuthD - authentication daemon which implements a unified NSS/PAM infractructure
+Summary(pl.UTF-8):	PyAuthD - demon uwierzytelniania implementujący jednolitą infrastrukturę NSS/PAM
 Name:		PyAuthD
 Version:	0.1
 Release:	0.%{snap}.1
 License:	GPL
 Group:		Libraries/Python
-Source0:	%{name}-20070218.tar.gz
+Source0:	%{name}-%{snap}.tar.gz
 # Source0-md5:	2b7d72bd6c75f0fa58707c25e398f87e
 URL:		http://svn.asta.mh-hannover.de/categories/python/pyauthd/
+BuildRequires:	pam-devel
+BuildRequires:	python
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -16,6 +19,13 @@ PyAuthD is an authentication daemon which implements a unified NSS/PAM
 infrastructure for creating virtual user accounts under Unix. It is
 similar to the combination of {nss,pam}_ldap to authenticate against a
 user database in LDAP, but is more extensible.
+
+%description -l pl.UTF-8
+PyAuthD to demon uwierzytelniania implementujący jednolitą
+infrastrukturę NSS/PAM do tworzenia wirtualnych kont użytkowników pod
+Uniksem. Jest podobny do kombinacji {nss,pam}_ldap przy
+uwierzytelnianiu względem bazy użytkowników w LDAP, ale jest bardziej
+rozszerzalny.
 
 %prep
 %setup -q -n %{name}
