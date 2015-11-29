@@ -9,6 +9,7 @@ Group:		Libraries/Python
 Source0:	%{name}-%{snap}.tar.gz
 # Source0-md5:	2b7d72bd6c75f0fa58707c25e398f87e
 URL:		http://svn.asta.mh-hannover.de/categories/python/pyauthd/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	pam-devel
 BuildRequires:	python
 BuildRequires:	rpm-pythonprov
